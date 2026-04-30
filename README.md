@@ -303,21 +303,6 @@ Limitaciones principales:
 - Las diferencias pequeñas entre modelos deben interpretarse con cautela.
 - El LLM puede generar redacciones variables, aunque se le fuerce a seguir una estructura JSON.
 
----
-
-## Posibles mejoras futuras
-
-- Añadir tests unitarios para el motor de reglas.
-- Añadir soporte para varios proveedores LLM, como OpenAI y Gemini.
-- Añadir modo completamente offline sin LLM.
-- Añadir análisis de curvas de entrenamiento y validación.
-- Añadir carga de resultados desde CSV.
-- Añadir Dockerfile.
-- Añadir interfaz web sencilla.
-- Añadir evaluación automática de varios experimentos.
-
----
-
 ## Estado del proyecto
 
 Versión inicial funcional.
