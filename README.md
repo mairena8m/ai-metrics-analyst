@@ -41,6 +41,7 @@ Las decisiones numéricas importantes, como seleccionar el mejor modelo o calcul
 ai-metrics-analyst/
 │
 ├── app/
+│   ├── __init__.py
 │   ├── main.py
 │   ├── schemas.py
 │   ├── rule_engine.py
@@ -50,8 +51,12 @@ ai-metrics-analyst/
 ├── examples/
 │   └── segmentacion_example.json
 │
+├── tests/
+│   └── test_rule_engine.py
+│
 ├── .env.example
 ├── .gitignore
+├── pytest.ini
 ├── requirements.txt
 └── README.md
 ```
@@ -94,7 +99,7 @@ cd ai-metrics-analyst
 
 ### 2. Crear entorno virtual
 
-En Windows:
+En Windows CMD:
 
 ```bash
 python -m venv venv
@@ -113,6 +118,32 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+## Tests
+
+El proyecto incluye tests unitarios para comprobar el comportamiento del motor de reglas.
+
+Para ejecutar los tests:
+
+```bash
+python -m pytest -v
+```
+
+Actualmente se validan:
+
+- Selección del mejor modelo según la métrica principal.
+- Selección del modelo más débil.
+- Clasificación del nivel de mejora.
+- Error cuando solo se proporciona un modelo.
+- Error cuando falta la métrica principal.
+
+Resultado esperado:
+
+```text
+7 passed
+```
+
+Los tests se centran en la parte determinista del sistema, ya que la respuesta del LLM puede variar y depende de un servicio externo.
 
 ---
 
